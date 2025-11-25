@@ -1,11 +1,19 @@
-# Cuaview Releases
+# Cuaview
 
-Download the latest version of Cuaview - Computer Use Agent Viewer for macOS.
+A native macOS client for [Claude's computer use](https://docs.anthropic.com/en/docs/agents-and-tools/computer-use). Built for [Claude Opus 4.5](https://www.anthropic.com/news/claude-opus-4-5).
 
-## Latest Release
+https://github.com/user-attachments/assets/fe1054bc-1618-466c-85c1-d150fc675e11
 
-Check the [Releases](https://github.com/pravaco/cuaview-releases/releases) page to download.
+## Download
 
-## About
+[**Releases**](https://github.com/pravaco/cuaview-releases/releases/latest) · Apple Silicon · Signed + notarized
 
-Cuaview lets you view and interact with Computer Use Agents. Signed and notarized for macOS.
+## Setup
+
+1. Download DMG, drag to Applications
+2. Grant Accessibility + Screen Recording permissions
+3. Enter Anthropic API key
+
+## Links
+
+[Blog](https://blog.sdan.io/archon) · [@sdand](https://x.com/sdand)
