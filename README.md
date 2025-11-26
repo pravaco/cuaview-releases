@@ -14,6 +14,12 @@ https://github.com/user-attachments/assets/6ae29046-ec12-49a9-94c8-10e2600a4ccd
 2. Grant Accessibility + Screen Recording permissions
 3. Enter Anthropic API key
 
+## 🌊
+
+```bash
+swift cuascape_runner.swift
+```
+
 ## Links
 
 [Blog](https://blog.sdan.io/archon) · [@sdand](https://x.com/sdand)
