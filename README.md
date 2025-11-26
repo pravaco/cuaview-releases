@@ -2,7 +2,7 @@
 
 A native macOS client for [Claude's computer use](https://docs.anthropic.com/en/docs/agents-and-tools/computer-use). Built for [Claude Opus 4.5](https://www.anthropic.com/news/claude-opus-4-5).
 
-https://github.com/user-attachments/assets/fe1054bc-1618-466c-85c1-d150fc675e11
+https://github.com/user-attachments/assets/6ae29046-ec12-49a9-94c8-10e2600a4ccd
 
 ## Download
 
