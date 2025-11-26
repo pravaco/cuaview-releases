@@ -1,7 +1,9 @@
 /*
  * "Seascape" by Alexander Alekseev aka TDM - 2014
- * Ported to Metal by Claude
  * License Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
+ * Contact: tdmaav@gmail.com
+ *
+ * Ported to Metal for Cuaview by Prava (2024)
  */
 
 #include <metal_stdlib>

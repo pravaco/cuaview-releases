@@ -1,7 +1,9 @@
 #!/usr/bin/env swift
 /*
- * Seascape Metal Shader Runner
- * Usage: swift seascape_runner.swift
+ * Cuascape Runner - Metal shader viewer
+ * Based on "Seascape" by Alexander Alekseev aka TDM - 2014
+ * Ported to Metal for Cuaview by Prava (2024)
+ * Usage: swift cuascape_runner.swift
  */
 
 import Cocoa
@@ -15,7 +17,7 @@ struct Uniforms {
     var mouse: SIMD2<Float>
 }
 
-class SeascapeRenderer: NSObject, MTKViewDelegate {
+class CuascapeRenderer: NSObject, MTKViewDelegate {
     let device: MTLDevice
     let commandQueue: MTLCommandQueue
     let pipelineState: MTLRenderPipelineState
@@ -37,10 +39,10 @@ class SeascapeRenderer: NSObject, MTKViewDelegate {
 
         // Load shader from file
         let shaderPath = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
-            .appendingPathComponent("seascape.metal")
+            .appendingPathComponent("cuascape.metal")
 
         guard let shaderSource = try? String(contentsOf: shaderPath, encoding: .utf8) else {
-            print("Failed to load seascape.metal")
+            print("Failed to load cuascape.metal")
             return nil
         }
 
@@ -91,14 +93,14 @@ class SeascapeRenderer: NSObject, MTKViewDelegate {
     }
 }
 
-class SeascapeView: MTKView {
+class CuascapeView: MTKView {
     var lastMouseLocation: NSPoint = .zero
 
     override var acceptsFirstResponder: Bool { true }
 
     override func mouseMoved(with event: NSEvent) {
         lastMouseLocation = event.locationInWindow
-        if let renderer = delegate as? SeascapeRenderer {
+        if let renderer = delegate as? CuascapeRenderer {
             renderer.uniforms.mouse = SIMD2<Float>(Float(lastMouseLocation.x), Float(lastMouseLocation.y))
         }
     }
@@ -110,8 +112,8 @@ class SeascapeView: MTKView {
 
 class AppDelegate: NSObject, NSApplicationDelegate {
     var window: NSWindow!
-    var metalView: SeascapeView!
-    var renderer: SeascapeRenderer!
+    var metalView: CuascapeView!
+    var renderer: CuascapeRenderer!
 
     func applicationDidFinishLaunching(_ notification: Notification) {
         let windowRect = NSRect(x: 100, y: 100, width: 1280, height: 720)
@@ -121,13 +123,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             backing: .buffered,
             defer: false
         )
-        window.title = "Seascape - Metal Shader"
+        window.title = "Cuascape - Metal Shader"
         window.center()
 
-        metalView = SeascapeView(frame: windowRect)
+        metalView = CuascapeView(frame: windowRect)
         metalView.preferredFramesPerSecond = 60
 
-        guard let renderer = SeascapeRenderer(metalView: metalView) else {
+        guard let renderer = CuascapeRenderer(metalView: metalView) else {
             NSApp.terminate(nil)
             return
         }
